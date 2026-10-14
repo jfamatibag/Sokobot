@@ -112,12 +112,15 @@ class SokoBot:
         start_state = (initial_player, tuple(sorted(initial_boxes)))
         queue = deque([(start_state, [])])
         visited = {start_state}
+        expanded_state = 0
 
         while queue:
             (current_player, current_boxes_tuple), path = queue.popleft()
             current_boxes_set = set(current_boxes_tuple)
+            expanded_state =+ 1
 
             if current_boxes_set == goals:
+                print("Expanded States: {expanded_state}")
                 return path
 
             player_y, player_x = current_player  
