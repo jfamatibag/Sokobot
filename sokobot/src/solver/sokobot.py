@@ -117,7 +117,7 @@ class SokoBot:
         while queue:
             (current_player, current_boxes_tuple), path = queue.popleft()
             current_boxes_set = set(current_boxes_tuple)
-            expanded_state =+ 1
+            expanded_state += 1
 
             if current_boxes_set == goals:
                 print("Expanded States: {expanded_state}")
